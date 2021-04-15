@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
 
+app.get('/', (req, res) => {
+    res.send('CRUD API for Whiteboard')
+})
 
 const mongoose = require('mongoose');
-mongoose.connect(`mongodb+srv://alfaro:${process.env.MONGO_PASS}@wbdv-sp21-01-juan-alfar.cqdt5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://alfaro:${process.env.MONGO_PASS}@wbdv-sp21-01-juan-alfar.cqdt5.mongodb.net/whiteboard?retryWrites=true&w=majority`,
     {useNewUrlParser: true, useUnifiedTopology: true});
 
 
@@ -25,4 +28,4 @@ require('./controllers/quizzes-controller')(app)
 require('./controllers/questions-controller')(app)
 require('./controllers/quiz-attempts-controller')(app)
 
-app.listen(3000)
+app.listen()
