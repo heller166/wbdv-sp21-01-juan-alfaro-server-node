@@ -3,7 +3,7 @@ const app = express()
 
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/whiteboard',
+mongoose.connect('mongodb+srv://alfaro:BekFqKzQFdPk7soG@wbdv-sp21-01-juan-alfar.cqdt5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     {useNewUrlParser: true, useUnifiedTopology: true});
 
 
