@@ -10,9 +10,6 @@ mongoose.connect(`mongodb+srv://alfaro:${process.env.MONGO_PASS}@wbdv-sp21-01-ju
     {useNewUrlParser: true, useUnifiedTopology: true});
 
 
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
 
 // configure CORS
 app.use(function (req, res, next) {
@@ -23,6 +20,10 @@ app.use(function (req, res, next) {
         'GET, POST, PUT, PATCH, DELETE, OPTIONS');
     next();
 });
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 require('./controllers/quizzes-controller')(app)
 require('./controllers/questions-controller')(app)
